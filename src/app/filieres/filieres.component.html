@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-white">
+        <img src="../../assets/logoUahb.png" 
+        [routerLink]="['/facultes'] " alt="Bootstrap" width="90" height="80">
+      </a>
+      <a class="btn btn-success navbar-brand text-white" [routerLink]="['/candidats']">Préinscriptions</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row col-md-10">
+        <div  *ngFor="let une_filiere of les_filieres" class="col-md-4 mt-3">
+            <div  class="card p-2" style="margin-left: 20px;">
+                <div class="card-title">
+                    <h4> {{une_filiere.nom}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-lg-9">
+          <div class="card shadow-lg border-0 rounded-lg mt-3">
+              <div class="card-header"><h3 class="text-center font-weight-light my-2">Préincription</h3></div>
+              <div class="card-body">
+                  <form>
+                      <div class="form-floating mb-3">
+                          <input class="form-control" name="nom" [(ngModel)]="un_candidat.nom" type="text">
+                          <label for="inputname">Nom</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" name="prenom" [(ngModel)]="un_candidat.prenom" type="text">
+                        <label for="inputname">Prenom</label>
+                      </div>
+                    <div class="form-floating mb-3">
+                      <input class="form-control" [(ngModel)]="un_candidat.date_naissance" name="date_naissance"  type="date">
+                      <label for="inputname">Date Naissance</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input class="form-control" [(ngModel)]="un_candidat.lieu_naissance" name="lieu_naissance" type="text">
+                      <label for="inputname">Lieu de Naissance</label>
+                    </div>
+                      <div class="form-floating mb-3">  
+                          <select class="form-control" name="sexe" [(ngModel)]="un_candidat.sexe">
+                            <option selected disabled value="">Choose...</option>
+                            <option value="Féminin"> Féminin</option>
+                            <option value="Masculin">Masculin</option>
+                          </select>
+                          <label for="inputname">Sexe</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" [(ngModel)]="un_candidat.telephone" name="telephone" type="number">
+                        <label for="inputname">Telephone</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" [(ngModel)]="un_candidat.email" name="email" type="email">
+                        <label for="inputname">Email</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" type="text" [(ngModel)]="un_candidat.niveau_scolaire" name="niveau_scolaire">
+                        <label for="inputname">Niveau Scolaire</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                          <select class="form-control" [(ngModel)]="un_candidat.id_faculte" 
+                          name="id_faculte" >
+                              <option selected disabled value="">Choose...</option>
+                              <option *ngFor="let une_faculte of les_facultes"  value="{{une_faculte.id_faculte}}">
+                                {{une_faculte.libelle}}</option>
+                          </select>
+                          <label for="inputname">Faculte</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <select class="form-control"  [(ngModel)]="un_candidat.id_departement"
+                        name="id_departement" >
+                            <option selected disabled value="">Choose...</option>
+                            <option *ngFor="let un_departement of les_departements" value="{{un_departement.id_departement}}">
+                              {{un_departement.libelle}}</option>
+                        </select>
+                        <label for="inputname">Departement</label>
+                    </div>
+                      <div class="mt-4 mb-0">
+                      <div class="d-grid">
+                          <button class="btn btn-primary btn-block" (click)="Ajouter()">
+                              Sauvegarder
+                          </button>
+                      </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+  
+  
